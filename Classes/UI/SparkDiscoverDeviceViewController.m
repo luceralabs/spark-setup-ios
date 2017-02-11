@@ -440,11 +440,8 @@
 
                     if ([SparkCloud sharedInstance].isAuthenticated)
                     {
-                        // that means device is claimed by somebody else - we want to check that with user (and set claimcode if user wants to change ownership)
-                        NSString *messageStr = [NSString stringWithFormat:@"This %@ is has been setup before, do you want to override ownership to %@?",[SparkSetupCustomization sharedInstance].deviceName,[SparkCloud sharedInstance].loggedInUsername];
-                        self.changeOwnershipAlertView = [[UIAlertView alloc] initWithTitle:@"Product ownership" message:messageStr delegate:self cancelButtonTitle:nil otherButtonTitles:@"Yes",@"No",nil];
-                        [self.checkConnectionTimer invalidate];
-                        [self.changeOwnershipAlertView show];
+                        self.needToCheckDeviceClaimed = YES;
+                        [self setDeviceClaimCode];
                     }
                     else // user skipped authentication so no need to claim or set claim code
                     {
@@ -481,27 +478,6 @@
     
     
 }
-
-
--(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if (alertView == self.changeOwnershipAlertView)
-    {
-        NSLog(@"button index %ld",(long)buttonIndex);
-        if (buttonIndex == 0) //YES
-        {
-            self.needToCheckDeviceClaimed = YES;
-            [self setDeviceClaimCode];
-        }
-        else
-        {
-            self.needToCheckDeviceClaimed = NO;
-            [self goToWifiListScreen];
-        }
-    }
-}
-
-
 
 
 -(void)photonPublicKey

@@ -37,9 +37,7 @@
 // new claiming process
 @property (nonatomic, strong) NSString *claimCode;
 @property (nonatomic, strong) NSArray *claimedDevices;
-@property (weak, nonatomic) IBOutlet SparkSetupUIButton *logoutButton;
 @property (weak, nonatomic) IBOutlet UIButton *cancelSetupButton;
-@property (weak, nonatomic) IBOutlet SparkSetupUILabel *loggedInUserLabel;
 
 @end
 
@@ -53,7 +51,6 @@
     
     UIColor *navBarButtonsColor = ([SparkSetupCustomization sharedInstance].lightStatusAndNavBar) ? [UIColor whiteColor] : [UIColor blackColor];
     [self.cancelSetupButton setTitleColor:navBarButtonsColor forState:UIControlStateNormal];
-    [self.logoutButton setTitleColor:navBarButtonsColor forState:UIControlStateNormal];
     
     if ([SparkSetupCustomization sharedInstance].productImage)
         self.productImageView.image = [SparkSetupCustomization sharedInstance].productImage;
