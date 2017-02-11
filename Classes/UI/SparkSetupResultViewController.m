@@ -94,6 +94,7 @@
     [super viewWillAppear:animated];
     
     switch (self.setupResult) {
+        case SparkSetupMainControllerResultSuccessDeviceOffline:
         case SparkSetupMainControllerResultSuccess:
         {
             self.setupResultImageView.image = [SparkSetupMainController loadImageFromResourceBundle:@"success"];
@@ -111,24 +112,12 @@
 
             break;
         }
-            
-        case SparkSetupMainControllerResultSuccessDeviceOffline:
-        {
-            self.setupResultImageView.image = [SparkSetupMainController loadImageFromResourceBundle:@"warning"];
-            self.shortMessageLabel.text = @"Setup completed";
-            self.longMessageLabel.text = @"Your device has been successfully claimed to your account, however it is offline. If the device was already claimed before this setup, then the Wi-Fi connection may have failed, and you should try setup again.";
-            
-#ifdef ANALYTICS
-            [[SEGAnalytics sharedAnalytics] track:@"Device Setup: Success" properties:@{@"reason":@"device offline"}];
-#endif
-            break;
-        }
 
         case SparkSetupMainControllerResultSuccessNotClaimed:
         {
-            self.setupResultImageView.image = [SparkSetupMainController loadImageFromResourceBundle:@"success"];
-            self.shortMessageLabel.text = @"Setup completed";
-            self.longMessageLabel.text = @"Setup was successful, but since you do not own this device we cannot know if the {device} has connected to the Internet. If you see the LED breathing cyan this means it worked! If not, please restart the setup process.";
+            self.setupResultImageView.image = [SparkSetupMainController loadImageFromResourceBundle:@"warning"];
+            self.shortMessageLabel.text = @"Setup Issue";
+            self.longMessageLabel.text = @"Your device was able to connect to the internet but there was an issue with the {device}'s connection to the {device} cloud. Please contact {device} customer support.";
             
 #ifdef ANALYTICS
             [[SEGAnalytics sharedAnalytics] track:@"Device Setup: Success" properties:@{@"reason":@"not claimed"}];
