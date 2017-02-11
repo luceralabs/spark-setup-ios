@@ -44,10 +44,6 @@
     self.brandImageView.image = [SparkSetupCustomization sharedInstance].brandImage;
     self.brandImageView.backgroundColor = [SparkSetupCustomization sharedInstance].brandImageBackgroundColor;
     
-    
-    UIColor *navBarButtonsColor = ([SparkSetupCustomization sharedInstance].lightStatusAndNavBar) ? [UIColor whiteColor] : [UIColor blackColor];
-
-    
     // force load images from resource bundle
     self.wifiSymbolImageView.image = [SparkSetupMainController loadImageFromResourceBundle:@"wifi3"];
     

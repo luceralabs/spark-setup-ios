@@ -25,7 +25,6 @@
 
 
 @interface SparkGetReadyViewController ()
-@property (weak, nonatomic) IBOutlet UIImageView *brandImageView;
 @property (weak, nonatomic) IBOutlet UIButton *readyButton;
 @property (weak, nonatomic) IBOutlet SparkSetupUISpinner *spinner;
 
@@ -56,36 +55,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.brandImageView.image = [SparkSetupCustomization sharedInstance].brandImage;
-    self.brandImageView.backgroundColor = [SparkSetupCustomization sharedInstance].brandImageBackgroundColor;
-    
-    UIColor *navBarButtonsColor = ([SparkSetupCustomization sharedInstance].lightStatusAndNavBar) ? [UIColor whiteColor] : [UIColor blackColor];
-    [self.logoutButton setTitleColor:navBarButtonsColor forState:UIControlStateNormal];
-    
-    if ([SparkSetupCustomization sharedInstance].productImage)
-        self.productImageView.image = [SparkSetupCustomization sharedInstance].productImage;
-
-    if ([SparkCloud sharedInstance].loggedInUsername)
-        self.loggedInLabel.text = [self.loggedInLabel.text stringByAppendingString:[SparkCloud sharedInstance].loggedInUsername];
-    else
-        self.loggedInLabel.text = @"";
-    self.loggedInLabel.alpha = 0.85;
-    self.logoutButton.titleLabel.font = [UIFont fontWithName:[SparkSetupCustomization sharedInstance].headerTextFontName size:self.logoutButton.titleLabel.font.pointSize];
-//    [self.logoutButton setTitleColor:[SparkSetupCustomization sharedInstance].normalTextColor forState:UIControlStateNormal];
-
-    if ([SparkCloud sharedInstance].isAuthenticated)
-    {
-        self.loggedInLabel.text = [SparkCloud sharedInstance].loggedInUsername;
-    }
-    else
-    {
-        [self.logoutButton setTitle:@"Log in" forState:UIControlStateNormal];
-        self.loggedInLabel.text = @"";
-    }
-    if ([SparkSetupCustomization sharedInstance].disableLogOutOption) {
-        self.logoutButton.hidden = YES;
-    }
 }
 
 - (void)didReceiveMemoryWarning {
