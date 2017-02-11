@@ -1556,7 +1556,7 @@
                                 <rect key="frame" x="16" y="117" width="343" height="474"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9TV-C6-fe7" userLabel="1View">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="158"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="259" height="158"/>
                                         <subviews>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="5OM-o6-IbI">
                                                 <rect key="frame" x="0.0" y="64" width="30" height="30"/>
@@ -1582,7 +1582,7 @@
                                                 </variation>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap Home &gt; Settings &gt; Wi-Fi" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0C3-l9-xXN" customClass="SparkSetupUILabel">
-                                                <rect key="frame" x="38" y="69" width="305" height="21"/>
+                                                <rect key="frame" x="38" y="69" width="221" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -1592,14 +1592,13 @@
                                             <constraint firstItem="5OM-o6-IbI" firstAttribute="centerY" secondItem="0C3-l9-xXN" secondAttribute="centerY" constant="6" id="7KQ-Cc-dTz">
                                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                                             </constraint>
+                                            <constraint firstItem="5OM-o6-IbI" firstAttribute="leading" secondItem="9TV-C6-fe7" secondAttribute="leading" id="ATE-CR-xum"/>
                                             <constraint firstItem="0C3-l9-xXN" firstAttribute="top" secondItem="5OM-o6-IbI" secondAttribute="top" constant="5" id="MAI-k7-lF3">
                                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                                             </constraint>
                                             <constraint firstItem="0C3-l9-xXN" firstAttribute="centerY" secondItem="5OM-o6-IbI" secondAttribute="centerY" constant="-0.5" id="WBJ-QY-XFs"/>
-                                            <constraint firstAttribute="trailing" secondItem="0C3-l9-xXN" secondAttribute="trailing" id="hDV-17-GR0"/>
                                             <constraint firstItem="0C3-l9-xXN" firstAttribute="top" secondItem="5OM-o6-IbI" secondAttribute="top" constant="5" id="kST-yg-PE3"/>
-                                            <constraint firstItem="5OM-o6-IbI" firstAttribute="centerY" secondItem="9TV-C6-fe7" secondAttribute="centerY" id="wMs-lb-k8D"/>
-                                            <constraint firstItem="5OM-o6-IbI" firstAttribute="leading" secondItem="9TV-C6-fe7" secondAttribute="leading" id="x3g-Q4-yhL"/>
+                                            <constraint firstItem="5OM-o6-IbI" firstAttribute="centerY" secondItem="9TV-C6-fe7" secondAttribute="centerY" id="x0E-sI-noI"/>
                                             <constraint firstItem="0C3-l9-xXN" firstAttribute="leading" secondItem="5OM-o6-IbI" secondAttribute="trailing" constant="32" id="xPd-WE-rma">
                                                 <variation key="heightClass=regular-widthClass=compact" constant="8"/>
                                             </constraint>
@@ -1952,16 +1951,16 @@
                                     </constraint>
                                     <constraint firstItem="7Qv-7J-ByG" firstAttribute="top" secondItem="YLP-FT-NGK" secondAttribute="bottom" id="F8h-iI-qfA"/>
                                     <constraint firstAttribute="trailing" secondItem="7Qv-7J-ByG" secondAttribute="trailing" id="GrG-U2-DIU"/>
-                                    <constraint firstItem="9TV-C6-fe7" firstAttribute="top" secondItem="bH6-hD-cea" secondAttribute="top" id="Iou-Mg-Ode"/>
                                     <constraint firstAttribute="bottom" secondItem="7Qv-7J-ByG" secondAttribute="bottom" id="Nc3-1b-Rkx"/>
-                                    <constraint firstItem="YLP-FT-NGK" firstAttribute="trailing" secondItem="9TV-C6-fe7" secondAttribute="trailing" id="U7j-rV-AVt"/>
+                                    <constraint firstAttribute="trailing" secondItem="9TV-C6-fe7" secondAttribute="trailing" constant="84" id="Qvc-op-aui"/>
+                                    <constraint firstItem="9TV-C6-fe7" firstAttribute="leading" secondItem="YLP-FT-NGK" secondAttribute="leading" id="Xlo-kI-Ka1"/>
+                                    <constraint firstItem="YLP-FT-NGK" firstAttribute="top" secondItem="9TV-C6-fe7" secondAttribute="bottom" id="ZCP-a2-9Vg"/>
                                     <constraint firstItem="7Qv-7J-ByG" firstAttribute="trailing" secondItem="YLP-FT-NGK" secondAttribute="trailing" id="bky-bv-gRd"/>
                                     <constraint firstItem="YLP-FT-NGK" firstAttribute="centerY" secondItem="bH6-hD-cea" secondAttribute="centerY" id="c4T-6o-57Z"/>
-                                    <constraint firstItem="YLP-FT-NGK" firstAttribute="top" secondItem="9TV-C6-fe7" secondAttribute="bottom" id="caa-6b-wA6"/>
-                                    <constraint firstAttribute="bottom" secondItem="9TV-C6-fe7" secondAttribute="bottom" constant="316" id="e1u-5h-SLt"/>
+                                    <constraint firstAttribute="bottom" secondItem="9TV-C6-fe7" secondAttribute="bottom" constant="316" id="egV-Aw-Rng"/>
                                     <constraint firstItem="7Qv-7J-ByG" firstAttribute="leading" secondItem="bH6-hD-cea" secondAttribute="leading" id="fOW-Ib-qyr"/>
-                                    <constraint firstItem="YLP-FT-NGK" firstAttribute="leading" secondItem="9TV-C6-fe7" secondAttribute="leading" id="foF-y9-ZkU"/>
                                     <constraint firstAttribute="width" constant="406" id="klZ-Nh-V5S"/>
+                                    <constraint firstItem="9TV-C6-fe7" firstAttribute="top" secondItem="bH6-hD-cea" secondAttribute="top" id="v9y-4y-hlC"/>
                                     <constraint firstItem="7Qv-7J-ByG" firstAttribute="leading" secondItem="YLP-FT-NGK" secondAttribute="leading" id="y63-rU-8mY"/>
                                 </constraints>
                                 <variation key="default">

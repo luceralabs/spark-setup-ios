@@ -47,7 +47,7 @@
 
 - (IBAction)cancelSetup:(id)sender {
     [[NSNotificationCenter defaultCenter] postNotificationName:kSparkSetupDidFinishNotification object:nil userInfo:@{kSparkSetupDidFinishStateKey:@(SparkSetupMainControllerResultUserCancel)}];
-    printf("Attempting to cancel...");
+    NSLog(@"Attempting to close...");
 }
 
 
