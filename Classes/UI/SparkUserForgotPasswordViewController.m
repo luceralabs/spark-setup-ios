@@ -30,13 +30,6 @@
 @implementation SparkUserForgotPasswordViewController
 
 
-- (UIStatusBarStyle)preferredStatusBarStyle
-{
-    return ([SparkSetupCustomization sharedInstance].lightStatusAndNavBar) ? UIStatusBarStyleLightContent : UIStatusBarStyleDefault;
-}
-
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     

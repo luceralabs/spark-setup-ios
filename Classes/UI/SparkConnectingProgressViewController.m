@@ -80,14 +80,6 @@ typedef NS_ENUM(NSInteger, SparkSetupConnectionProgressState) {
 
 @implementation SparkConnectingProgressViewController
 
-
-- (UIStatusBarStyle)preferredStatusBarStyle
-{
-    return ([SparkSetupCustomization sharedInstance].lightStatusAndNavBar) ? UIStatusBarStyleLightContent : UIStatusBarStyleDefault;
-}
-
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
