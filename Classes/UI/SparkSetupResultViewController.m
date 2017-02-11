@@ -203,20 +203,6 @@
 }
 
 
--(BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    if (textField == self.nameDeviceTextField)
-    {
-        [textField resignFirstResponder];
-        [self.device rename:textField.text completion:^(NSError *error) {
-            [self doneButtonTapped:self];
-        }];
-    }
-    
-    return YES;
-}
-
-
 - (IBAction)doneButtonTapped:(id)sender
 {
     NSMutableDictionary *userInfo = [NSMutableDictionary new];
