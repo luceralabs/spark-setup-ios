@@ -39,7 +39,7 @@
 @property (nonatomic, strong) NSString *claimCode;
 @property (nonatomic, strong) NSArray *claimedDevices;
 @property (weak, nonatomic) IBOutlet SparkSetupUIButton *logoutButton;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelSetupButton;
+@property (weak, nonatomic) IBOutlet UIButton *cancelSetupButton;
 @property (weak, nonatomic) IBOutlet SparkSetupUILabel *loggedInUserLabel;
 
 @end
@@ -61,6 +61,7 @@
     self.brandImageView.backgroundColor = [SparkSetupCustomization sharedInstance].brandImageBackgroundColor;
     
     UIColor *navBarButtonsColor = ([SparkSetupCustomization sharedInstance].lightStatusAndNavBar) ? [UIColor whiteColor] : [UIColor blackColor];
+    [self.cancelSetupButton setTitleColor:navBarButtonsColor forState:UIControlStateNormal];
     [self.logoutButton setTitleColor:navBarButtonsColor forState:UIControlStateNormal];
     
     if ([SparkSetupCustomization sharedInstance].productImage)
@@ -73,6 +74,10 @@
     self.loggedInLabel.alpha = 0.85;
     self.logoutButton.titleLabel.font = [UIFont fontWithName:[SparkSetupCustomization sharedInstance].headerTextFontName size:self.logoutButton.titleLabel.font.pointSize];
 //    [self.logoutButton setTitleColor:[SparkSetupCustomization sharedInstance].normalTextColor forState:UIControlStateNormal];
+
+    //    self.cancelSetupButton. // customize color too
+    self.cancelSetupButton.titleLabel.font = [UIFont fontWithName:[SparkSetupCustomization sharedInstance].headerTextFontName size:self.self.cancelSetupButton.titleLabel.font.pointSize];
+//    [self.cancelSetupButton setTitleColor:[SparkSetupCustomization sharedInstance].normalTextColor forState:UIControlStateNormal];
 
     if ([SparkCloud sharedInstance].isAuthenticated)
     {

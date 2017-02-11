@@ -22,7 +22,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *networkNameTextField;
 @property (weak, nonatomic) IBOutlet UISwitch *networkRequiresPasswordSwitch;
 @property (weak, nonatomic) IBOutlet UIImageView *wifiSymbolImageView;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *backButton;
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
 
 @end
 
@@ -43,6 +43,7 @@
     self.brandImageView.backgroundColor = [SparkSetupCustomization sharedInstance].brandImageBackgroundColor;
     
     UIColor *navBarButtonsColor = ([SparkSetupCustomization sharedInstance].lightStatusAndNavBar) ? [UIColor whiteColor] : [UIColor blackColor];
+    [self.backButton setTitleColor:navBarButtonsColor forState:UIControlStateNormal];
 
     
     // Trick to add an inset from the left of the text fields
@@ -59,6 +60,9 @@
     
     self.wifiSymbolImageView.image = [self.wifiSymbolImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     self.wifiSymbolImageView.tintColor = [SparkSetupCustomization sharedInstance].normalTextColor;// elementBackgroundColor;;
+
+    self.backButton.imageView.image = [self.backButton.imageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    self.backButton.imageView.tintColor = [SparkSetupCustomization sharedInstance].normalTextColor;// elementBackgroundColor;;
     
 }
 
